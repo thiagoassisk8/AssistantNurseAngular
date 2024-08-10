@@ -2,26 +2,61 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
-## Development server
+Aqui está a versão atualizada do README:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+# Nurse Marketplace Frontend
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This is the frontend for the nurse marketplace application, now developed in Angular and styled with Tailwind CSS, connected to the Node.js backend.
 
-## Build
+## Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Make sure you have Node.js installed on your machine.
 
-## Running unit tests
+- Node.js (minimum version 14.x.x)
+- npm (minimum version 7.x.x)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+Clone this repository and install the necessary dependencies.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+git clone https://github.com/thiagoassisk8/nurse-assistant-front
+cd nurse-assistant-front
+npm install
+```
 
-## Further help
+## Backend Configuration
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Before starting the frontend, make sure the backend is properly configured and running at the correct URL.
+
+## Running the Application
+
+To start the Angular application, use the following command:
+
+```bash
+npm run start
+```
+
+The application will run in development mode.<br />
+Open [http://localhost:4200](http://localhost:4200) in your browser to view it.
+
+## Features
+
+![Screenshot 1](imgs/loginV1.png)
+![Screenshot 2](imgs/registerv1.png)
+
+## Technologies Used
+
+- Angular
+- Tailwind CSS
+- Angular Router for managing routes
+
+## More Information
+
+For more details about the project, check out the corresponding [backend repository](https://github.com/thiagoassisk8/nurse-assistant).
+
+---
+
+This project was developed as part of a nurse marketplace application, focusing on registration and login functionalities using JWT for authentication.
