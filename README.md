@@ -6,7 +6,7 @@ Aqui está a versão atualizada do README:
 
 ---
 
-# Nurse Marketplace Frontend
+# Nurse Register Page Frontend
 
 This is the frontend for the nurse marketplace application, now developed in Angular and styled with Tailwind CSS, connected to the Node.js backend.
 
@@ -22,8 +22,8 @@ Make sure you have Node.js installed on your machine.
 Clone this repository and install the necessary dependencies.
 
 ```bash
-git clone https://github.com/thiagoassisk8/nurse-assistant-front
-cd nurse-assistant-front
+git clone https://github.com/thiagoassisk8/AssistantNurseAngular
+cd ASSISTANTNURSEANGULAR
 npm install
 ```
 
