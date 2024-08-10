@@ -1,7 +1,7 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient} from '@angular/common/http';
-import {  tap } from 'rxjs/operators';
+
 
 export type AuthDto = {
   token: string,
@@ -12,25 +12,24 @@ export type AuthDto = {
 })
 
 export class AuthService {
-  userData: any; // change to User
+  userData: any; // TODO change to User Model
   private privateUrl = 'http://localhost:3000';
-
+  // TODO move privateUrl to .env and turn that into Environment Variables
 
 
   constructor(
     public router: Router,
-    public ngZone: NgZone,
     private _http: HttpClient
   ) {}
 
   SignIn(email: string, password: string): void {
-    console.log("teste");
+
 
     this._http.post<AuthDto>(this.privateUrl + "/auth/login", { email, password }).subscribe({
       next: (response) => {
         console.log(response);
         if (response.token) {
-          console.log("aqui?");
+
           sessionStorage.setItem("token", response.token)
 
           this.router.navigate(['dashboard']);
@@ -41,6 +40,7 @@ export class AuthService {
 
       },
       complete: () => {
+        // TODO Create notification component
         window.alert('Login attempt complete')
         console.info('Login attempt complete');
       }
@@ -55,15 +55,17 @@ export class AuthService {
       next: (response) => {
         console.log("response")
         console.log(response)
-        // console.log("Signup successful", response);
+        console.log("Signup successful", response);
 
 
       },
       error: (error) => {
+        // TODO Create notification component
         window.alert(`${error}`)
 
       },
       complete: () => {
+        // TODO Create notification component
         window.alert(`${email} was registered successfully`);
         this.router.navigate(['sign-in']);
         console.info('Signup process complete');
