@@ -9,6 +9,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
+// TODO create footer and header
 @NgModule({
   declarations: [
     AppComponent,
