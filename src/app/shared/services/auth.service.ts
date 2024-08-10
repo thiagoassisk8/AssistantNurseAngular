@@ -41,6 +41,7 @@ export class AuthService {
 
       },
       complete: () => {
+        window.alert('Login attempt complete')
         console.info('Login attempt complete');
       }
     });
@@ -52,15 +53,19 @@ export class AuthService {
   SignUp(name: string, email: string, password: string): void {
     this._http.post<AuthDto>(this.privateUrl + "/users/register", { name, email, password }).subscribe({
       next: (response) => {
+        console.log("response")
+        console.log(response)
         // console.log("Signup successful", response);
+
 
       },
       error: (error) => {
-        this.router.navigate(['dashboard']);
-        console.error("Error during signup:", error);
+        window.alert(`${error}`)
 
       },
       complete: () => {
+        window.alert(`${email} was registered successfully`);
+        this.router.navigate(['sign-in']);
         console.info('Signup process complete');
       }
     });

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { AuthService } from './shared/services/auth.service';
+
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
 @NgModule({
