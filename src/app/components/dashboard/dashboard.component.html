@@ -1,0 +1,33 @@
+<div class="bg-gray-200">
+  <div class="py-4">
+    <ul class="flex flex-col">
+      <!-- Calling SignOut() Api from AuthService -->
+      <li class="mt-4 d-flex align-items-center">
+        <a
+          class="ml-6 text-indigo-600 hover:text-indigo-800 font-bold text-lg align-middle"
+          (click)="authService.SignOut()"
+        >
+          <i class="fas fa-2x fa-sign-out-alt mr-1 align-middle"></i> Log out
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Main content -->
+  <div class="w-5/6 ml-6">
+    <div class="py-8">
+      <div class="border-b border-indigo-200 pb-4 mb-8">
+        <h1 class="text-2xl font-bold">User Profile</h1>
+      </div>
+      <!-- Show user data when logged in -->
+      <div *ngIf="authService.userData as user">
+        <div class="mb-4">
+          <h1 class="text-2xl">
+            Hello, <strong>{{ user.name ? user.name : "User" }}</strong>
+          </h1>
+          <p class="text-lg font-bold">User ID: {{ user.id }}</p>
+          <p class="text-lg font-bold">Email: {{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

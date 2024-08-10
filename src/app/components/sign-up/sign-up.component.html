@@ -1,0 +1,58 @@
+<div class="flex h-screen items-center justify-center bg-gray-200">
+  <div class="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
+    <form class="space-y-6">
+      <div>
+        <label for="floating_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email address</label>
+        <input type="email" name="floating_email" id="floating_email" #userEmail
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="name@company.com" required />
+      </div>
+      <div>
+        <label for="floating_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+        <input type="password" name="floating_password" id="floating_password" #userPwd
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="••••••••" required />
+      </div>
+      <div>
+        <label for="floating_repeat_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm password</label>
+        <input type="password" name="floating_repeat_password" id="floating_repeat_password"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="••••••••" required />
+      </div>
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div>
+          <label for="floating_first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
+          <input type="text" name="floating_first_name" id="floating_first_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="John" required />
+        </div>
+        <div>
+          <label for="floating_last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last name</label>
+          <input type="text" name="floating_last_name" id="floating_last_name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Doe" required />
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 md:gap-6">
+        <div>
+          <label for="floating_phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number</label>
+          <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="123-456-7890" required />
+        </div>
+        <div>
+          <label for="floating_company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company</label>
+          <input type="text" name="floating_company" id="floating_company"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Google" required />
+        </div>
+      </div>
+      <input
+        type="button"
+        class="btn btnPrimary w-full p-2 mb-4 hover:bg-indigo-600 bg-blue-700 text-white rounded-lg border border-transparent"
+        value="Sign Up"
+        (click)="authService.SignUp(userEmail.value, userPwd.value)"
+      />
+    </form>
+  </div>
+</div>
