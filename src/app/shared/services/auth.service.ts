@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient} from '@angular/common/http';
+import { User } from './user';
+import { Observable } from 'rxjs';
 
 
 export type AuthDto = {
@@ -12,7 +14,7 @@ export type AuthDto = {
 })
 
 export class AuthService {
-  userData: any; // TODO change to User Model
+
   private privateUrl = 'http://localhost:3000';
   // TODO move privateUrl to .env and turn that into Environment Variables
 
@@ -22,9 +24,22 @@ export class AuthService {
     private _http: HttpClient
   ) {}
 
+  getStatus(): Observable<User> {
+    const token = sessionStorage.getItem("token");
+
+    if (token) {
+      return this._http.get<User>("http://localhost:3000/auth/status", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+    } else {
+      console.error("No token found. Please log in first.");
+      throw new Error("No token found");
+    }
+  }
+
   SignIn(email: string, password: string): void {
-
-
     this._http.post<AuthDto>(this.privateUrl + "/auth/login", { email, password }).subscribe({
       next: (response) => {
         console.log(response);
@@ -41,13 +56,10 @@ export class AuthService {
       },
       complete: () => {
         // TODO Create notification component
-        window.alert('Login attempt complete')
         console.info('Login attempt complete');
       }
     });
   }
-
-
 
 
   SignUp(name: string, email: string, password: string): void {

@@ -8,9 +8,7 @@
           class="ml-6 text-indigo-600 hover:text-indigo-800 font-bold text-lg align-middle"
           (click)="authService.SignOut()"
         >
-          <i class="fas fa-2x fa-sign-out-alt mr-1 align-middle">
-
-          </i> Log out
+          <i class="fas fa-2x fa-sign-out-alt mr-1 align-middle"></i> Log out
         </a>
       </li>
     </ul>
@@ -22,13 +20,12 @@
         <h1 class="text-2xl font-bold">User Profile</h1>
       </div>
       <!-- Show user data when logged in -->
-      <div *ngIf="authService.userData as user">
+      <div *ngIf="user">
         <div class="mb-4">
           <h1 class="text-2xl">
             Hello, <strong>{{ user.name ? user.name : "User" }}</strong>
           </h1>
-          <p class="text-lg font-bold">User ID: {{ user.id }}</p>
-          <p class="text-lg font-bold">Email: {{ user.email }}</p>
+          <p class="text-lg font-bold">Your Email is: {{ user.email }}</p>
         </div>
       </div>
     </div>
