@@ -2,8 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
-Aqui está a versão atualizada do README:
-
 ---
 
 # Nurse Register Page Frontend

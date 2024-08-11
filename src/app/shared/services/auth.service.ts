@@ -51,6 +51,7 @@ export class AuthService {
         }
       },
       error: (error) => {
+        window.alert(`${error.status} Login Failed`);
         console.error("Erro ao fazer login:", error);
 
       },
@@ -65,15 +66,15 @@ export class AuthService {
   SignUp(name: string, email: string, password: string): void {
     this._http.post<AuthDto>(this.privateUrl + "/users/register", { name, email, password }).subscribe({
       next: (response) => {
-        console.log("response")
-        console.log(response)
-        console.log("Signup successful", response);
+
+
 
 
       },
       error: (error) => {
         // TODO Create notification component
-        window.alert(`${error}`)
+        window.alert(`${error.status} register attempt Failed`);
+        // window.alert(`${error}`)
 
       },
       complete: () => {
