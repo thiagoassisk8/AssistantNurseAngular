@@ -10,10 +10,12 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-// TODO create footer and header
+import { HeaderComponent } from './components/header/header.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
     DashboardComponent,
     SignInComponent,
     SignUpComponent

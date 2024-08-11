@@ -100,8 +100,8 @@ export class AuthService {
   }
 
   get isCurrentUser(): boolean {
-    const user = JSON.parse(localStorage.getItem('token')!);
-    return user !== null ? true : false;
+    const token = sessionStorage.getItem('token');
+    return token !== null;
   }
 
   SignOut() {
