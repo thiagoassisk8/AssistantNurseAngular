@@ -1,5 +1,7 @@
 # AssistantNurseAngular
 
+There is some low-quality code in this project that I'm still working on improving. I’ve added a TODO for everything I noticed. Feel free to suggest improvements; I am refining Angular.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
 
 ---

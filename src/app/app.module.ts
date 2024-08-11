@@ -9,6 +9,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 // TODO create footer and header
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 
   ],
   providers: [
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

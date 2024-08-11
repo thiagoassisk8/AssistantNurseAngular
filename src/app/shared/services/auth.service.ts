@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient} from '@angular/common/http';
 import { User } from './user';
 import { Observable } from 'rxjs';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 export type AuthDto = {
   token: string,
@@ -11,17 +11,20 @@ export type AuthDto = {
 
 @Injectable({
   providedIn: 'root',
+
 })
 
 export class AuthService {
 
-  private privateUrl = 'http://localhost:3000';
   // TODO move privateUrl to .env and turn that into Environment Variables
+  private privateUrl = 'http://localhost:3000';
 
 
   constructor(
     public router: Router,
-    private _http: HttpClient
+    private _http: HttpClient,
+    // TODO Separate serviceLogic from components
+    private snackBar: MatSnackBar
   ) {}
 
   getStatus(): Observable<User> {
@@ -51,7 +54,12 @@ export class AuthService {
         }
       },
       error: (error) => {
-        window.alert(`${error.status} Login Failed`);
+        // TODO Separate serviceLogic from components
+        this.snackBar.open(`Login failed: ${error.status} ${error.message}`, 'Close', {
+          duration: 5000,
+
+        });
+
         console.error("Erro ao fazer login:", error);
 
       },
@@ -72,14 +80,19 @@ export class AuthService {
 
       },
       error: (error) => {
-        // TODO Create notification component
-        window.alert(`${error.status} register attempt Failed`);
-        // window.alert(`${error}`)
+        // TODO Separate serviceLogic from components
+        this.snackBar.open(`Register attempt failed: ${error.status} ${error.message}`, 'Close', {
+          duration: 5000,
+        });
+
 
       },
       complete: () => {
-        // TODO Create notification component
-        window.alert(`${email} was registered successfully`);
+        // TODO Separate serviceLogic from components
+        this.snackBar.open(`${email} was registered successfully`, 'Close', {
+          duration: 5000,
+        });
+
         this.router.navigate(['sign-in']);
         console.info('Signup process complete');
       }
@@ -90,8 +103,6 @@ export class AuthService {
     const user = JSON.parse(localStorage.getItem('token')!);
     return user !== null ? true : false;
   }
-
-
 
   SignOut() {
     sessionStorage.removeItem("token");
