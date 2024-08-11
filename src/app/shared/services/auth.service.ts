@@ -42,7 +42,7 @@ export class AuthService {
   SignIn(email: string, password: string): void {
     this._http.post<AuthDto>(this.privateUrl + "/auth/login", { email, password }).subscribe({
       next: (response) => {
-        console.log(response);
+
         if (response.token) {
 
           sessionStorage.setItem("token", response.token)
