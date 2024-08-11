@@ -14,7 +14,7 @@ export class AuthRedirect implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    if (this.authService.isLoggedIn == true) {
+    if (this.authService.isCurrentUser == true) {
       this.router.navigate(['dashboard'])
     }
     return true;

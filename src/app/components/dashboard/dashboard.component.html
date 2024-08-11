@@ -1,33 +1,23 @@
-<!-- TODO Look up a better dashboard in Flowbite -->
-<div class="bg-gray-200">
-  <div class="py-4">
-    <ul class="flex flex-col">
-      <!-- Calling SignOut() Api from AuthService -->
-      <li class="mt-4 d-flex align-items-center">
+
+<div class="min-h-screen dark:bg-slate-800 gap-6 flex items-center justify-center">
+
+  <div class="bg-gray-100 dark:bg-gray-700 relative shadow-xl overflow-hidden hover:shadow-2xl group rounded-xl p-5 transition-all duration-500 transform">
+
+    <div class="flex items-center gap-4">
+
+      <img src="https://images.unsplash.com/photo-1503235930437-8c6293ba41f5?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D"
+        class="w-32 group-hover:w-36 group-hover:h-36 h-32 object-center object-cover rounded-full transition-all duration-500 delay-500 transform"
+      />
+      <div *ngIf="user" class="w-fit transition-all transform duration-500">
+        <h1 class="text-gray-600 dark:text-gray-200 font-bold">
+          {{ user.name ? user.name : "User" }}
+        </h1>
+        <p class="text-gray-400">Your role goes here</p>
         <a
-          class="ml-6 text-indigo-600 hover:text-indigo-800 font-bold text-lg align-middle"
-          (click)="authService.SignOut()"
-        >
-          <i class="fas fa-2x fa-sign-out-alt mr-1 align-middle"></i> Log out
+          class="text-xs text-gray-500 dark:text-gray-200 group-hover:opacity-100 opacity-0 transform transition-all delay-300 duration-500">
+          {{ user.email }}
+          <button  (click)="authService.SignOut()" class="rounded-2xl dark:bg-gray-700 px-4 py-2 font-bold leading-none text-white">Logout</button>
         </a>
-      </li>
-    </ul>
-  </div>
-  <!-- Main content -->
-  <div class="w-5/6 ml-6">
-    <div class="py-8">
-      <div class="border-b border-indigo-200 pb-4 mb-8">
-        <h1 class="text-2xl font-bold">User Profile</h1>
-      </div>
-      <!-- Show user data when logged in -->
-      <div *ngIf="user">
-        <div class="mb-4">
-          <h1 class="text-2xl">
-            Hello, <strong>{{ user.name ? user.name : "User" }}</strong>
-          </h1>
-          <p class="text-lg font-bold">Your Email is: {{ user.email }}</p>
-        </div>
       </div>
     </div>
   </div>
-</div>

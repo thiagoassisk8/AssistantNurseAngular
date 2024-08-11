@@ -44,6 +44,7 @@ Open [http://localhost:4200](http://localhost:4200) in your browser to view it.
 
 ![Screenshot 1](imgs/loginV1.png)
 ![Screenshot 2](imgs/registerv1.png)
+![Screenshot 2](imgs/screenshot3.png)
 
 ## Technologies Used
 

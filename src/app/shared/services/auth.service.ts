@@ -86,7 +86,7 @@ export class AuthService {
     });
   }
 
-  get isLoggedIn(): boolean {
+  get isCurrentUser(): boolean {
     const user = JSON.parse(localStorage.getItem('token')!);
     return user !== null ? true : false;
   }
